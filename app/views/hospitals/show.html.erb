@@ -1,0 +1,12 @@
+<center><h2><%= @hospital.name %></h2></center>
+
+<div id="doctors">
+<%= "Doctors Employed:" %>
+<% @doctors.each do |doctor| %>
+  <div id="doctor_id-<%= doctor.id %>">
+  <h3><%= doctor.name %></h3>
+  <h4><%= "Patients: #{doctor.patient_count}"%><br>
+  </div>
+<% end %>
+
+</div>

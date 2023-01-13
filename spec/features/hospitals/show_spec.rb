@@ -30,8 +30,10 @@ RSpec.describe "hospital show page" do
       visit hospital_path(@hospital.id)
 
       within "#doctors" do
+        expect(page).to have_content("Doctors Employed:")
         expect(page).to have_css("#doctor_id-#{@doctor.id} ~ #doctor_id-#{@doctor2.id}")
         expect(page).to have_css("#doctor_id-#{@doctor2.id} ~ #doctor_id-#{@doctor3.id}")
+        expect(page).to_not have_css("#doctor_id-#{@doctor3.id} ~ #doctor_id-#{@doctor.id}")
       end
 
       within "#doctor_id-#{@doctor.id}" do
@@ -46,9 +48,5 @@ RSpec.describe "hospital show page" do
         expect(page).to have_content("Patients: 1")
       end
     end
-
-
   end
-
-
 end
