@@ -1,0 +1,8 @@
+<h2><%= "Patient List" %></h2>
+<div id="adult_patients">
+  <% @adult_patients.each do |patient| %>
+    <div id="patient_id-<%= patient.id %>">
+    <h3><%= patient.name %></h3>
+    </div>
+  <% end %>
+</div>
