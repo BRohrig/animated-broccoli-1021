@@ -4,9 +4,10 @@
 <%= "Hospital: #{@doctor.hospital.name} " %><br>
 
 <div id="patients">
-  <%= @doctor.patients.each do |patient| %>
-    <div id="patient_id-<% patient.id %>">
+  <% @patients.each do |patient| %>
+    <div id="patient_id-<%= patient.id %>">
     <h3><%= patient.name %><br>
+    <%= button_to "Remove Patient", doctor_patient_path, method: "delete", params: {doctor_id: @doctor.id, patient_id: patient.id} %>
     </div>
   <% end %>
 
