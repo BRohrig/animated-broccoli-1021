@@ -70,10 +70,5 @@ RSpec.describe 'doctor show page' do
         expect(page).to have_content(@patient2.name)
       end
     end
-
-
-
   end
-
-
 end
